@@ -5,6 +5,9 @@ import android.os.AsyncTask;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+
 public class RequestsSender extends AsyncTask<String, String, String> {
 
     private JSONObject registerObject;
@@ -27,6 +30,8 @@ public class RequestsSender extends AsyncTask<String, String, String> {
 
     @Override
     protected String doInBackground(String... strings) {
+
+
         return "TODO";
     }
 }
