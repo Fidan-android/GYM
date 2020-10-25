@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">GYM</string>
+    <string name="DEVICE_INFO">DEVICE_INFO</string>
+    <string name="step1">Step 1/5</string>
+    <string name="purpose">What is your purpose?</string>
+    <string name="weight_loss">Weight loss</string>
+    <string name="keeping_fit">Keeping fit</string>
+    <string name="build_muscule">Build muscule</string>
+    <string name="step2">Step 2/5</string>
+    <string name="gender">What is your gender?</string>
+    <string name="female_text">Female</string>
+    <string name="male_text">Male</string>
+    <string name="next">Next</string>
+    <string name="step3">Step 3/5</string>
+    <string name="work">What do you want to work on?</string>
+    <string name="hands">Hands</string>
+    <string name="spine">Spine</string>
+    <string name="torso">Torso</string>
+    <string name="legs">Legs</string>
+    <string name="step4">Step 4/5</string>
+    <string name="often">How often do you exercise?</string>
+    <string name="newbie">"Newbie &#10; Just getting started"</string>
+    <string name="keep_on">"Keep on &#10; 1–2 times a week"</string>
+    <string name="advanced">""Advanced &#10; More than 3 times a week"</string>
+    <string name="step5">Step 5/5</string>
+    <string name="params">What\'s your height and weight?</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="home_gym">"Home &#10; Gym"</string>
+    <string name="ivanov">Ivanov</string>
+    <string name="password">Password</string>
+    <string name="sing_in">Sing In</string>
+    <string name="sing_up">"Sign Up"</string>
+    <string name="back">Back</string>
+    <string name="email_text">Ivanov@gmail.com</string>
+</resources>
