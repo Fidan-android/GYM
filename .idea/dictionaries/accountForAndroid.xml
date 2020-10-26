@@ -2,8 +2,12 @@
   <dictionary name="accountForAndroid">
     <words>
       <w>ivanov</w>
+      <w>mosila</w>
+      <w>mozilla</w>
       <w>muscule</w>
       <w>ofthen</w>
+      <w>signin</w>
+      <w>signup</w>
     </words>
   </dictionary>
 </component>

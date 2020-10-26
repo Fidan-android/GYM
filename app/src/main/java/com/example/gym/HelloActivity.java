@@ -8,8 +8,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -32,6 +35,10 @@ public class HelloActivity extends AppCompatActivity {
     Button nextLastStep;
     ArrayList<Button> buttons;
     private String ofthen = "";
+    private TextInputLayout eWeight;
+    private TextInputLayout eHeight;
+    private EditText weight;
+    private EditText height;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +56,10 @@ public class HelloActivity extends AppCompatActivity {
         keep_on = (Button) findViewById(R.id.keep_on);
         advanced = (Button) findViewById(R.id.advanced);
         nextLastStep = findViewById(R.id.next_last_step);
+        eWeight = findViewById(R.id.eWeight);
+        eHeight = findViewById(R.id.eHeight);
+        weight = findViewById(R.id.weight);
+        height = findViewById(R.id.height);
     }
 
     public void secondStep(View view){
@@ -126,14 +137,18 @@ public class HelloActivity extends AppCompatActivity {
     }
 
     public void endStep(View view){
-        setFirstStart();
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                startActivity(new Intent(HelloActivity.this, MainActivity.class));
-                finish();
+        if (!(weight.getText().toString().equals("")) && Double.parseDouble(weight.getText().toString()) > 0){
+            double w = Double.parseDouble(weight.getText().toString());
+            if (!(height.getText().toString().equals("")) && Double.parseDouble(height.getText().toString()) > 0){
+                double h = Double.parseDouble(height.getText().toString());
+                eHeight.setError(null);
+                eWeight.setError(null);
+            } else {
+                eHeight.setError("Неверное значение");
             }
-        }, 500);
+        } else {
+            eWeight.setError("Неверное значение");
+        }
     }
 
     public void setFirstStart(){
