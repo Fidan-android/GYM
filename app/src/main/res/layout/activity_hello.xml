@@ -571,7 +571,9 @@
             android:layout_below="@id/params"
             android:layout_marginHorizontal="80dp"
             android:layout_marginTop="40dp"
-            app:errorEnabled="true">
+            app:errorEnabled="true"
+            app:hintTextColor="@color/white"
+            android:padding="10dp">
             <EditText
                 android:id="@+id/height"
                 android:layout_width="match_parent"
@@ -581,7 +583,8 @@
                 android:textColor="@color/blue69"
                 android:inputType="numberDecimal"
                 app:fontFamily="@font/gym"
-                android:paddingHorizontal="20dp"/>
+                android:paddingHorizontal="20dp"
+                android:padding="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -590,8 +593,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/eHeight"
             android:layout_marginHorizontal="80dp"
-            android:layout_marginTop="40dp"
-            app:errorEnabled="true">
+            app:errorEnabled="true"
+            app:hintTextColor="@color/white"
+            android:padding="10dp"
+            android:paddingTop="15dp">
         <EditText
             android:id="@+id/weight"
             android:layout_width="match_parent"
@@ -601,7 +606,10 @@
             android:textColor="@color/blue69"
             android:inputType="numberDecimal"
             app:fontFamily="@font/gym"
-            android:paddingHorizontal="20dp"/>
+            android:layout_marginTop="25dp"
+            android:paddingHorizontal="20dp"
+            android:padding="10dp"
+            android:paddingTop="15dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -610,7 +618,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/eWeight"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/button_rounded"
             android:text="@string/next"
             android:textColor="@color/blue69"

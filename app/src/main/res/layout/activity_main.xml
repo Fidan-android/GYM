@@ -16,8 +16,8 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
                 android:src="@drawable/gym_logo"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"/>
@@ -31,8 +31,8 @@
                 android:layout_centerHorizontal="true"
                 app:fontFamily="@font/gym"
                 android:textColor="@color/white"
-                android:textSize="45sp"
-                android:textAlignment="center" />
+                android:textSize="40sp"
+                android:textAlignment="center"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/eLogin"
@@ -40,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_home_gym"
                 android:layout_marginHorizontal="80dp"
+                app:fontFamily="@font/gym"
                 android:layout_marginTop="30dp"
                 app:errorEnabled="true">
                 <EditText
@@ -63,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/eLogin"
                 android:layout_marginHorizontal="80dp"
+                app:fontFamily="@font/gym"
                 android:layout_marginTop="30dp"
                 app:errorEnabled="true"
                 app:passwordToggleEnabled="true">
@@ -81,11 +83,21 @@
                     android:drawablePadding="25dp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/errorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ePassword"
+                app:fontFamily="@font/gym"
+                android:layout_marginHorizontal="80dp"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/error"/>
+
             <Button
                 android:id="@+id/sign_in"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ePassword"
+                android:layout_below="@id/errorLayout"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/button_rounded"
@@ -95,10 +107,11 @@
                 app:fontFamily="@font/gym"
                 android:focusable="true"
                 android:clickable="true"
-                android:enabled="true"/>
+                android:enabled="true"
+                android:onClick="signIn"/>
 
             <TextView
-                android:id="@+id/sign_up"
+                android:id="@+id/sign_up_text"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/sign_in"

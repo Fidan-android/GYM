@@ -109,26 +109,6 @@ public class HelloActivity extends AppCompatActivity {
         Button button = (Button) view;
         nextLastStep.setEnabled(true);
         ofthen = button.getTag().toString();
-        /*if (Objects.equals(button.getBackground(), getDrawable(R.drawable.button_rounded))){
-            button.setBackground(getDrawable(R.drawable.button_gray_rounded));
-            if (!(button.getTag().equals(newbie.getTag()))){
-                newbie.setBackground(getDrawable(R.drawable.button_rounded));
-            }
-            if (!(button.getTag().equals(keep_on.getTag()))){
-                keep_on.setBackground(getDrawable(R.drawable.button_rounded));
-            }
-            if (!(button.getTag().equals(advanced.getTag()))){
-                advanced.setBackground(getDrawable(R.drawable.button_rounded));
-            }
-            nextLastStep.setEnabled(true);
-            ofthen = button.getTag().toString();
-        } else {
-            newbie.setBackground(getDrawable(R.drawable.button_rounded));
-            keep_on.setBackground(getDrawable(R.drawable.button_rounded));
-            advanced.setBackground(getDrawable(R.drawable.button_rounded));
-            nextLastStep.setEnabled(false);
-            ofthen = "";
-        }*/
     }
 
     public void fifthStep(View view){
@@ -143,6 +123,14 @@ public class HelloActivity extends AppCompatActivity {
                 double h = Double.parseDouble(height.getText().toString());
                 eHeight.setError(null);
                 eWeight.setError(null);
+                setFirstStart(w, h);
+                new Timer().schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(HelloActivity.this, MainActivity.class));
+                        finish();
+                    }
+                }, 500);
             } else {
                 eHeight.setError("Неверное значение");
             }
@@ -151,11 +139,13 @@ public class HelloActivity extends AppCompatActivity {
         }
     }
 
-    public void setFirstStart(){
+    public void setFirstStart(double w, double h){
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed = sharedPreferences.edit();
 
         ed.putBoolean("first_start", true);
+        ed.putFloat("weight", Float.parseFloat(String.valueOf(w)));
+        ed.putFloat("height", Float.parseFloat(String.valueOf(h)));
         ed.apply();
     }
 

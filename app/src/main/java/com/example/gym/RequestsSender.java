@@ -16,7 +16,7 @@ import okhttp3.Response;
 
 public class RequestsSender extends AsyncTask<String, String, String> {
 
-    private JSONObject registerObject;
+    private JSONObject registerObject = new JSONObject();
 
     private String type;
     private String url = "http://gym.areas.su/";
@@ -47,6 +47,16 @@ public class RequestsSender extends AsyncTask<String, String, String> {
         }
     }
 
+    public RequestsSender(String username){
+        url += "signout";
+        type = "out";
+        try {
+            registerObject.put("username", username);
+        } catch (JSONException ex){
+            ex.printStackTrace();
+        }
+    }
+
     @Override
     protected String doInBackground(String... strings) {
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), registerObject.toString());
@@ -61,8 +71,14 @@ public class RequestsSender extends AsyncTask<String, String, String> {
         try {
             Response response = call.execute();
             assert response.body() != null;
-            return response.body().toString();
-        } catch (IOException ex) {
+            String jsonString = response.body().string();
+            JSONObject responseJSON = new JSONObject(jsonString);
+            if (type.equals("reg") || type.equals("out")){
+                return responseJSON.getJSONObject("notice").getString("answer");
+            } else {
+                return responseJSON.getJSONObject("notice").getString("token");
+            }
+        } catch (IOException | JSONException ex) {
             return ex.toString();
         }
    }
