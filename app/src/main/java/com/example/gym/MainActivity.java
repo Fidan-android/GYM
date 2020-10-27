@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
             String response = requestsSender.get();
             System.out.println(response);
             Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this, HomeActivity.class));
+            finish();
         } catch (Exception ex){
             ex.printStackTrace();
         }

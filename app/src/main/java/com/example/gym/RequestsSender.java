@@ -74,9 +74,9 @@ public class RequestsSender extends AsyncTask<String, String, String> {
             String jsonString = response.body().string();
             JSONObject responseJSON = new JSONObject(jsonString);
             if (type.equals("reg") || type.equals("out")){
-                return responseJSON.getJSONObject("notice").getString("answer");
+                return responseJSON.getString("notice");
             } else {
-                return responseJSON.getJSONObject("notice").getString("token");
+                return responseJSON.getString("notice");
             }
         } catch (IOException | JSONException ex) {
             return ex.toString();
