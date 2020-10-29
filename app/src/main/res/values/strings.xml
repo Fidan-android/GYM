@@ -33,4 +33,8 @@
     <string name="sing_up">"Sign Up"</string>
     <string name="back">Back</string>
     <string name="email_text">Ivanov@gmail.com</string>
+    <string name="plan">Plan</string>
+    <string name="lessons">Lessons</string>
+    <string name="reports">Reports</string>
+    <string name="profile">Profile</string>
 </resources>

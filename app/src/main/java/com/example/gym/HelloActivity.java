@@ -143,7 +143,7 @@ public class HelloActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed = sharedPreferences.edit();
 
-        ed.putBoolean("first_start", true);
+        ed.putBoolean("first_start", false);
         ed.putFloat("weight", Float.parseFloat(String.valueOf(w)));
         ed.putFloat("height", Float.parseFloat(String.valueOf(h)));
         ed.apply();

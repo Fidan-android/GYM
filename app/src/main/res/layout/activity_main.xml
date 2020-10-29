@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_home_gym"
-                android:layout_marginHorizontal="80dp"
+                android:layout_marginHorizontal="60dp"
                 app:fontFamily="@font/gym"
                 android:layout_marginTop="30dp"
                 app:errorEnabled="true">
@@ -63,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/eLogin"
-                android:layout_marginHorizontal="80dp"
+                android:layout_marginHorizontal="60dp"
                 app:fontFamily="@font/gym"
                 android:layout_marginTop="30dp"
                 app:errorEnabled="true"
