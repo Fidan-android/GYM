@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistrationActivity"
-    android:background="@color/blue69"
-    android:alpha="69">
+    android:background="@color/blue69">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,8 +17,8 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
                 android:src="@drawable/gym_logo"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"/>
@@ -33,7 +32,7 @@
                 android:layout_centerHorizontal="true"
                 app:fontFamily="@font/gym"
                 android:textColor="@color/white"
-                android:textSize="45sp"
+                android:textSize="40sp"
                 android:textAlignment="center" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -41,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_home_gym"
-                android:layout_marginHorizontal="80dp"
+                android:layout_marginHorizontal="60dp"
                 android:layout_marginTop="20dp"
                 app:errorEnabled="true">
                 <EditText
@@ -64,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/eLogin"
-                android:layout_marginHorizontal="80dp"
+                android:layout_marginHorizontal="60dp"
                 android:layout_marginTop="20dp"
                 app:errorEnabled="true">
                 <EditText
@@ -87,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/eEmail"
-                android:layout_marginHorizontal="80dp"
+                android:layout_marginHorizontal="60dp"
                 android:layout_marginTop="20dp"
                 app:errorEnabled="true"
                 app:passwordToggleEnabled="true">
@@ -111,7 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ePassword"
-                android:layout_marginHorizontal="80dp"
+                android:layout_marginHorizontal="60dp"
                 android:layout_marginTop="20dp"
                 app:errorEnabled="true"
                 app:passwordToggleEnabled="true">

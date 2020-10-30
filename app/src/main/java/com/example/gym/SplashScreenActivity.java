@@ -27,10 +27,17 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (isFirstStart()){
+                if (!isFirstStart()){
                     startActivity(new Intent(SplashScreenActivity.this, HelloActivity.class));
+                    finish();
                 } else {
-                    startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
+                    if (!isToken()){
+                        startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
+                        finish();
+                    } else {
+                        startActivity(new Intent(SplashScreenActivity.this, HomeActivity.class));
+                        finish();
+                    }
                 }
             }
         }, time_splash);
@@ -48,7 +55,12 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     public boolean isFirstStart(){
-        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
-        return sharedPreferences.getBoolean(first_start, true);
+        SharedPreferences sharedPreferences = getSharedPreferences(getResources().getString(R.string.DEVICE_INFO), 0);
+        return sharedPreferences.getBoolean(first_start, false);
+    }
+
+    public boolean isToken(){
+        SharedPreferences sharedPreferences = getSharedPreferences(getResources().getString(R.string.DEVICE_INFO), 0);
+        return sharedPreferences.getLong("token", 0) != 0;
     }
 }

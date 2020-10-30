@@ -3,6 +3,7 @@ package com.example.gym;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+
+import org.json.JSONObject;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -65,8 +68,14 @@ public class MainActivity extends AppCompatActivity {
             String response = requestsSender.get();
             System.out.println(response);
             Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(MainActivity.this, HomeActivity.class));
-            finish();
+            if (!response.equals("User is active")) {
+                SharedPreferences sharedPreferences = getSharedPreferences(getResources().getString(R.string.DEVICE_INFO), 0);
+                SharedPreferences.Editor ed = sharedPreferences.edit();
+                ed.putLong("token", Long.parseLong(response));
+                ed.apply();
+                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                finish();
+            }
         } catch (Exception ex){
             ex.printStackTrace();
         }

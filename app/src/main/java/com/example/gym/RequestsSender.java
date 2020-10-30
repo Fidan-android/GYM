@@ -84,10 +84,12 @@ public class RequestsSender extends AsyncTask<String, String, String> {
             assert response.body() != null;
             String jsonString = response.body().string();
             JSONObject responseJSON = new JSONObject(jsonString);
-            if (type.equals("reg") || type.equals("out")){
+            if (type.equals("reg")){
                 return responseJSON.getString("notice");
+            } else if (type.equals("out")){
+                return new JSONObject(responseJSON.getString("notice")).getString("text");
             } else {
-                return responseJSON.getString("notice");
+                return new JSONObject(responseJSON.getString("notice")).getString("token");
             }
         } catch (IOException | JSONException ex) {
             return ex.toString();

@@ -140,10 +140,10 @@ public class HelloActivity extends AppCompatActivity {
     }
 
     public void setFirstStart(double w, double h){
-        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences(getResources().getString(R.string.DEVICE_INFO), 0);
         SharedPreferences.Editor ed = sharedPreferences.edit();
 
-        ed.putBoolean("first_start", false);
+        ed.putBoolean("first_start", true);
         ed.putFloat("weight", Float.parseFloat(String.valueOf(w)));
         ed.putFloat("height", Float.parseFloat(String.valueOf(h)));
         ed.apply();

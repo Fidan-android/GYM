@@ -29,7 +29,7 @@
     <string name="home_gym">"Home &#10; Gym"</string>
     <string name="ivanov">Ivanov</string>
     <string name="password">Password</string>
-    <string name="sing_in">Sing In</string>
+    <string name="sing_in">Sign In</string>
     <string name="sing_up">"Sign Up"</string>
     <string name="back">Back</string>
     <string name="email_text">Ivanov@gmail.com</string>
@@ -37,4 +37,8 @@
     <string name="lessons">Lessons</string>
     <string name="reports">Reports</string>
     <string name="profile">Profile</string>
+    <string name="home">Home Gym</string>
+    <string name="training">Training</string>
+    <string name="kcal">Kcal</string>
+    <string name="minutes">Minutes</string>
 </resources>
