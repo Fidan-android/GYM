@@ -16,19 +16,19 @@ import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder>{
 
-    ArrayList<ImageView> imageViews;
-    ArrayList<TextView> textViews;
+    ArrayList<Integer> imageViews;
+    ArrayList<Integer> textViews;
     Context context;
     Activity activity;
 
-    public RecyclerAdapter(ArrayList<ImageView> images, ArrayList<TextView> texts, Context context, Activity activity) {
+    public RecyclerAdapter(ArrayList<Integer> images, ArrayList<Integer> texts, Context context, Activity activity) {
         imageViews = images;
         textViews = texts;
         this.activity = activity;
         this.context = context;
     }
 
-    public class RecyclerViewHolder extends RecyclerView.ViewHolder {
+    public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textView;
         public RecyclerViewHolder(View view) {
@@ -48,8 +48,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position){
-        holder.imageView = imageViews.get(position);
-        holder.textView = textViews.get(position);
+        holder.imageView.setImageResource(imageViews.get(position));
+        holder.textView.setText(textViews.get(position));
     }
 
     @Override

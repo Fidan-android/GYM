@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = getSharedPreferences(getResources().getString(R.string.DEVICE_INFO), 0);
                 SharedPreferences.Editor ed = sharedPreferences.edit();
                 ed.putLong("token", Long.parseLong(response));
+                ed.putString("username", username);
                 ed.apply();
                 startActivity(new Intent(MainActivity.this, HomeActivity.class));
                 finish();
